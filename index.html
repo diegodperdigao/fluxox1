@@ -123,7 +123,7 @@
   .vip-split .node h3 { font-size: 15px; }
   .vip-split .chev { display: none; }
   .vip-split .detail-inner { padding: 4px 14px 18px; }
-  footer { margin-top: 60px; border-top: 1px solid var(--line); padding-top: 26px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--ink-faint); font-size: 12.5px; letter-spacing: 0.4px; }
+  footer { margin-top: 60px; border-top: 1px solid var(--line); padding-top: 26px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; color: var(--ink-faint); font-size: 12.5px; letter-spacing: 0.4px; }
   .a-red { --accent: var(--red); --accent-ink: var(--red); --accent-soft: rgba(253,1,4,0.12); }
   .a-yellow { --accent: #e0b000; --accent-ink: #9a7600; --accent-soft: rgba(255,226,0,0.30); }
   .a-burg { --accent: var(--burgundy); --accent-ink: var(--burgundy); --accent-soft: rgba(84,0,49,0.10); }
@@ -155,7 +155,6 @@
   <div class="flow" id="flow"></div>
   <footer>
     <span class="fb"><img class="logo-img-sm" src="https://i.ibb.co/YBhrn1zz/Superbet-Logo-svg.png" alt="Superbet" onerror="this.style.display='none';document.getElementById('lf2').style.display='inline-flex';"><span class="logo-fallback-sm" id="lf2">superbet<span class="dot">.</span></span></span>
-    <span>Ordem de atrito crescente &middot; validação por tracking &middot; loop de retenção semanal</span>
   </footer>
 </div>
 <script>
@@ -172,7 +171,7 @@ const N = {
   react2: { accent:"a-yellow", badge:"B2", step:"Caminho B \u00b7 Qualifica\u00e7\u00e3o", title:"Faixa de valor mensal", sub:"Pergunta sens\u00edvel, deixada por \u00faltimo", dl:"Mensagem do x1", script:"Pra eu te colocar no grupo certo (alguns t\u00eam benef\u00edcio maior): quanto voc\u00ea costuma movimentar por m\u00eas em apostas?", op:false, opts:["100\u2013500","500\u20131.000","1.000\u20135.000","5.000\u201310.000","10.000+"], optHot:"10.000+", bullets:["S\u00f3 perguntada a quem j\u00e1 respondeu tudo antes","Faixas altas: grupo VIP, atendimento pr\u00f3ximo","Faixas menores: grupo geral segmentado"] },
   vip: { accent:"a-yellow", badge:"\u2605", step:"Tier alto", title:"Grupo VIP", sub:"Alta recorr\u00eancia", dl:"Tratamento do tier", script:"Grupo reduzido, atendimento pr\u00f3ximo, din\u00e2micas e promo\u00e7\u00f5es exclusivas pra quem t\u00e1 ativo, contato direto. Quem respondeu \"os dois\" e faixa alta entra aqui com prioridade.", op:true, bullets:["Promo\u00e7\u00f5es exclusivas, comunicadas dentro do grupo","Din\u00e2micas com benef\u00edcios maiores pra clientes ativos","Comunica\u00e7\u00e3o pessoal, menos massificada"] },
   general: { accent:"a-burg", badge:"\u2022", step:"Tier geral", title:"Grupo geral", sub:"Segmentado por interesse", dl:"Tratamento do tier", script:"Grupos por interesse declarado: cassino, esporte ou os dois. Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias pra clientes ativos e caminho de subida para o VIP.", op:true, bullets:["Comunica\u00e7\u00e3o em escala, mas segmentada por produto","Mesmas din\u00e2micas di\u00e1rias dentro do grupo","Monitorar quem sobe de faixa para promover ao VIP"] },
-  group: { accent:"a-red", badge:"\u2192", step:"Converg\u00eancia", title:"Entrada no grupo + nutri\u00e7\u00e3o", sub:"Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias", dl:"O que acontece dentro do grupo", script:"Todos os caminhos convergem aqui. O grupo \u00e9 o come\u00e7o da rela\u00e7\u00e3o: giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra quem t\u00e1 ativo, conte\u00fado do Jon e prova social da comunidade.", op:true, bullets:["Ritmo di\u00e1rio de din\u00e2micas mant\u00e9m a base voltando","Promo\u00e7\u00f5es comunicadas s\u00f3 aqui dentro, p/ clientes ativos","Prova social engaja quem j\u00e1 est\u00e1 no grupo"] },
+  group: { accent:"a-red", badge:"\u2192", step:"Ponto de encontro", title:"Entrada no grupo + nutri\u00e7\u00e3o", sub:"Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias", dl:"O que acontece dentro do grupo", script:"\u00c9 aqui que os dois caminhos se encontram. O grupo \u00e9 o come\u00e7o da rela\u00e7\u00e3o: giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra quem t\u00e1 ativo, conte\u00fado do Jon e prova social da comunidade.", op:true, bullets:["Ritmo di\u00e1rio de din\u00e2micas mant\u00e9m a base voltando","Promo\u00e7\u00f5es comunicadas s\u00f3 aqui dentro, p/ clientes ativos","Prova social engaja quem j\u00e1 est\u00e1 no grupo"] },
   loop: { accent:"a-red", badge:"\u221e", step:"Motor de reten\u00e7\u00e3o", title:"Loop de reten\u00e7\u00e3o", sub:"Din\u00e2micas di\u00e1rias mant\u00eam a base ativa", dl:"Como o loop se sustenta", script:"Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias \u2192 engajamento no grupo \u2192 comunidade ativa \u2192 recorr\u00eancia natural. Para o VIP, din\u00e2micas exclusivas e contato pr\u00f3ximo.", op:true, bullets:["Promo\u00e7\u00f5es s\u00e3o s\u00f3 para clientes ativos, nunca isca de cadastro","Sem condicionar pr\u00eamio a dep\u00f3sito, conforme a regula\u00e7\u00e3o","VIP recebe din\u00e2micas pr\u00f3prias e atendimento dedicado"] }
 };
 function detail(n) {
@@ -195,7 +194,7 @@ document.getElementById('flow').innerHTML =
   '<div class="col"><div class="col-head react"><span class="pill">B</span><div><div class="ch3">J\u00e1 tem conta</div><div class="cs">Reativa\u00e7\u00e3o \u00b7 segmenta\u00e7\u00e3o</div></div></div>' +
   stage('react1',N.react1) + conn('dot') + stage('react2',N.react2) + conn('dot') +
   '<div class="vip-split">' + node('vip',N.vip,true) + node('general',N.general,true) + '</div></div></div>' +
-  '<div class="divider">todos convergem</div>' +
+  '<div class="divider">os dois caminhos se encontram</div>' +
   stage('group',N.group) + conn() + stage('loop',N.loop);
 document.getElementById('flow').addEventListener('click', (e) => {
   const card = e.target.closest('.node');
