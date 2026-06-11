@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Funil de Conversão x1 · Projeto Superbet</title>
+<title>Funil de Conversão · Projeto Jon Vlogs × Superbet</title>
 <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/Q6uqNf1b4k7h4peN2r7jX1ok-Ur5l28cjm9qUb02Te2fyvo7iQRI09ReCZOQM26FSw=w480-h960-rw">
 <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/Q6uqNf1b4k7h4peN2r7jX1ok-Ur5l28cjm9qUb02Te2fyvo7iQRI09ReCZOQM26FSw=w480-h960-rw">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
     --bg: #ffffff;
     --bg-2: #fbf9f7;
     --panel: #ffffff;
-    --panel-2: #faf7fa;
     --ink: #1a1320;
     --ink-soft: #5c5566;
     --ink-faint: #938b9c;
@@ -28,7 +27,8 @@
     --hero: "Roboto Flex", system-ui, sans-serif;
     --body: "Inter", system-ui, sans-serif;
     --r: 14px;
-    --r-lg: 20px;
+    --wa: #25D366;
+    --tg: #2AABEE;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -37,97 +37,148 @@
       radial-gradient(1100px 520px at 88% -8%, rgba(253,1,4,0.06), transparent 60%),
       radial-gradient(800px 460px at -8% 14%, rgba(84,0,49,0.05), transparent 55%),
       var(--bg);
-    color: var(--ink);
-    font-family: var(--body);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
+    color: var(--ink); font-family: var(--body); line-height: 1.6;
+    -webkit-font-smoothing: antialiased; min-height: 100vh;
   }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px 32px; }
-  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 26px 0 0; margin-bottom: 56px; }
-  .brand { display: flex; align-items: center; gap: 14px; }
-  .brand .brand-label { font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); padding-left: 14px; border-left: 4px solid var(--red); }
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 26px 0 0; margin-bottom: 48px; }
   .brand .logo-img { height: 28px; width: auto; display: block; }
   .brand .logo-fallback { font-family: var(--hero); font-weight: 800; font-size: 26px; letter-spacing: -1px; color: var(--ink); display: none; align-items: center; }
   .brand .logo-fallback .dot { color: var(--red); margin-left: 2px; font-size: 30px; line-height: 0; }
-  footer .fb { display: inline-flex; align-items: center; }
-  footer .logo-img-sm { height: 20px; width: auto; display: block; opacity: 0.85; }
-  footer .logo-fallback-sm { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 16px; letter-spacing: -0.5px; color: var(--ink-soft); display: none; align-items: center; }
-  footer .logo-fallback-sm .dot { color: var(--red); }
-  .topbar .meta { font-family: var(--body); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); text-align: right; }
-  .hero { position: relative; padding: 30px 0 8px; margin-bottom: 18px; }
-  .hero .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--white); background: var(--purple); padding: 7px 16px; border-radius: 100px; margin-bottom: 26px; }
+  .topbar .meta { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); text-align: right; }
+
+  .hero { padding: 24px 0 8px; }
+  .hero .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--white); background: var(--purple); padding: 7px 16px; border-radius: 100px; margin-bottom: 24px; }
   .hero .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
-  .hero h1 { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: clamp(38px, 7vw, 88px); line-height: 0.92; letter-spacing: -2px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .hero h1 .y { color: var(--yellow); }
-  .hero h1 .r { color: var(--red); }
-  .hero .lede { max-width: 640px; color: var(--ink-soft); font-size: 18px; margin-top: 22px; }
-  .stats { display: flex; flex-wrap: wrap; gap: 14px; margin: 38px 0 16px; }
-  .stat { flex: 1 1 200px; border: 1px solid var(--line); border-radius: var(--r); background: linear-gradient(180deg, var(--panel), var(--bg-2)); padding: 18px 20px; }
-  .stat .n { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 28px; color: var(--ink); }
-  .stat .n.red { color: var(--red); }
-  .stat .l { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-  .section-head { display: flex; align-items: baseline; gap: 14px; margin: 64px 0 8px; border-top: 1px solid var(--line); padding-top: 28px; }
-  .section-head .idx { font-family: var(--hero); font-weight: 800; font-style: italic; color: var(--red); font-size: 18px; }
-  .section-head h2 { font-family: var(--hero); font-weight: 700; text-transform: uppercase; letter-spacing: -0.5px; font-size: 22px; }
-  .hint { color: var(--ink-faint); font-size: 14px; margin: 6px 0 34px; }
+  .hero h1 { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: clamp(34px, 6vw, 76px); line-height: 0.94; letter-spacing: -2px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .hero .lede { max-width: 680px; color: var(--ink-soft); font-size: 18px; margin-top: 20px; }
+
+  /* section nav */
+  .secnav { display: flex; gap: 8px; flex-wrap: wrap; margin: 34px 0 8px; }
+  .secnav a { font-size: 12.5px; font-weight: 600; letter-spacing: 0.4px; color: var(--ink-soft); text-decoration: none; border: 1px solid var(--line); padding: 8px 15px; border-radius: 100px; transition: all .15s ease; }
+  .secnav a:hover { border-color: var(--red); color: var(--red); }
+
+  .section-head { display: flex; align-items: baseline; gap: 14px; margin: 70px 0 6px; border-top: 1px solid var(--line); padding-top: 30px; }
+  .section-head .idx { font-family: var(--hero); font-weight: 800; font-style: italic; color: var(--red); font-size: 17px; min-width: 30px; }
+  .section-head h2 { font-family: var(--hero); font-weight: 700; text-transform: uppercase; letter-spacing: -0.5px; font-size: 23px; }
+  .section-sub { color: var(--ink-faint); font-size: 14.5px; margin: 6px 0 32px 44px; }
+  .hint { color: var(--ink-faint); font-size: 13.5px; margin: 0 0 30px 44px; }
   .hint b { color: var(--red); font-weight: 600; }
+
+  /* ===== Flow ===== */
   .flow { display: flex; flex-direction: column; align-items: center; }
-  .stage { width: 100%; max-width: 620px; }
-  .node { position: relative; width: 100%; border: 1px solid var(--line); border-radius: var(--r); background: linear-gradient(180deg, var(--panel), var(--bg-2)); padding: 0; cursor: pointer; text-align: left; overflow: hidden; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; font-family: var(--body); color: var(--ink); }
-  .node::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--red)); transform: scaleY(0); transform-origin: top; transition: transform .25s ease; }
-  .node:hover { transform: translateY(-3px); border-color: var(--line-2); box-shadow: 0 18px 40px -24px rgba(0,0,0,0.9); }
+  .stage { width: 100%; max-width: 640px; }
+  .node { position: relative; width: 100%; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); text-align: left; overflow: hidden; transition: border-color .2s, transform .2s, box-shadow .2s; color: var(--ink); }
+  .node .head { cursor: pointer; }
+  .node .detail-inner { cursor: text; }
+  .node::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--red)); transform: scaleY(0); transform-origin: top; transition: transform .25s; }
+  .node:hover { transform: translateY(-3px); border-color: var(--line-2); box-shadow: 0 18px 40px -26px rgba(0,0,0,0.5); }
   .node:hover::before, .node.open::before { transform: scaleY(1); }
   .node.open { border-color: var(--accent, var(--red)); }
   .node .head { padding: 18px 22px; display: flex; align-items: center; gap: 16px; }
-  .node .badge { flex: none; width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft, rgba(253,1,4,0.12)); color: var(--accent-ink, var(--accent, var(--red))); font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 19px; }
+  .node .badge { flex: none; width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft, rgba(253,1,4,0.12)); color: var(--accent-ink, var(--accent, var(--red))); font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 18px; }
   .node .ht { flex: 1; min-width: 0; }
   .node .step { font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--accent-ink, var(--accent, var(--red))); margin-bottom: 3px; }
   .node h3 { font-family: var(--hero); font-weight: 700; font-size: 19px; letter-spacing: -0.3px; line-height: 1.15; }
   .node .sub { color: var(--ink-soft); font-size: 14px; margin-top: 3px; }
-  .node .chev { flex: none; width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-faint); font-size: 14px; transition: transform .25s ease, color .2s ease, border-color .2s ease; }
+  .node .chev { flex: none; width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-faint); font-size: 14px; transition: transform .25s, color .2s, border-color .2s; }
   .node.open .chev { transform: rotate(180deg); color: var(--accent-ink, var(--accent, var(--red))); border-color: var(--accent, var(--red)); }
   .detail { max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); contain: layout paint; }
   .detail-inner { padding: 4px 22px 24px; border-top: 1px solid var(--line); }
   .detail-inner .dl { font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-faint); margin: 18px 0 10px; }
-  .script { background: var(--bg-2); border: 1px solid var(--line-2); border-left: 3px solid var(--accent, var(--red)); border-radius: 0 12px 12px 0; padding: 16px 20px; color: var(--ink); font-size: 16px; line-height: 1.62; position: relative; }
-  .script.op { color: var(--ink-soft); font-size: 14.5px; }
+  .script { position: relative; background: var(--bg-2); border: 1px solid var(--line-2); border-left: 3px solid var(--accent, var(--red)); border-radius: 0 12px 12px 0; padding: 30px 20px 16px; color: var(--ink); font-size: 15.5px; line-height: 1.62; }
+  .script::before { content: "\201C"; position: absolute; left: 17px; top: 20px; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700; font-size: 40px; line-height: 0; color: var(--accent, var(--red)); opacity: 0.32; }
+  .script.op { padding: 16px 20px; color: var(--ink-soft); font-size: 14.5px; }
+  .script.op::before { content: none; }
   .detail-inner ul { list-style: none; margin: 14px 0 0; }
   .detail-inner li { color: var(--ink-soft); font-size: 14.5px; padding: 6px 0 6px 24px; position: relative; }
   .detail-inner li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent, var(--red)); }
   .detail-inner li strong { color: var(--ink); font-weight: 600; }
   .opts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  .opt { font-size: 12.5px; font-weight: 500; color: var(--ink); border: 1px solid var(--line-2); border-radius: 100px; padding: 6px 14px; background: rgba(255,255,255,0.03); }
+  .opt { font-size: 12.5px; font-weight: 500; color: var(--ink); border: 1px solid var(--line-2); border-radius: 100px; padding: 6px 14px; background: rgba(0,0,0,0.02); }
   .opt.hot { border-color: var(--yellow); color: #9a7600; background: rgba(255,226,0,0.18); }
   .connector { width: 2px; height: 26px; background: linear-gradient(var(--line-2), var(--line)); }
   .connector.dot { height: 30px; background: none; display: grid; place-items: center; }
   .connector.dot::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-faint); box-shadow: 0 -9px 0 var(--ink-faint), 0 9px 0 var(--ink-faint); }
-  .divider { width: 100%; max-width: 620px; text-align: center; margin: 22px 0 18px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); display: flex; align-items: center; gap: 16px; }
+  .divider { width: 100%; max-width: 640px; text-align: center; margin: 22px 0 18px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); display: flex; align-items: center; gap: 16px; }
   .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; max-width: 1000px; align-items: start; }
-  .col { display: flex; flex-direction: column; align-items: center; }
-  .col-head { width: 100%; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; border: 1px solid var(--line); display: flex; align-items: center; gap: 12px; }
-  .col-head .pill { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
-  .col-head.acq { background: var(--red); border-color: var(--red); }
-  .col-head.acq .pill { background: var(--white); color: var(--red); }
-  .col-head.acq .ch3, .col-head.acq .cs { color: var(--white); }
-  .col-head.react { background: var(--burgundy); border-color: var(--burgundy); }
-  .col-head.react .pill { background: var(--white); color: var(--burgundy); }
-  .col-head.react .ch3, .col-head.react .cs { color: var(--white); }
-  .col-head .ch3 { font-family: var(--hero); font-weight: 700; font-size: 15px; }
-  .col-head .cs { font-size: 12.5px; color: var(--ink-soft); }
-  .col .stage { max-width: 100%; }
-  .vip-split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
-  .vip-split .node .head { padding: 14px; gap: 10px; flex-direction: column; align-items: flex-start; }
-  .vip-split .node .badge { width: 34px; height: 34px; font-size: 15px; }
-  .vip-split .node h3 { font-size: 15px; }
-  .vip-split .chev { display: none; }
-  .vip-split .detail-inner { padding: 4px 14px 18px; }
-  footer { margin-top: 60px; border-top: 1px solid var(--line); padding-top: 26px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; color: var(--ink-faint); font-size: 12.5px; letter-spacing: 0.4px; }
+
+  /* 3 groups */
+  .groups { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; width: 100%; max-width: 860px; }
+  .groups .gcard.vip { position: relative; }
+  .gcard .upgrade { position: absolute; top: 12px; right: 12px; z-index: 2; background: var(--yellow); color: #7a5c00; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 100px; }
+  .gcard { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); overflow: hidden; }
+  .gcard .gtop { padding: 18px 20px; color: var(--white); }
+  .gcard .gtop .plat { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; opacity: 0.9; display: flex; align-items: center; gap: 7px; }
+  .gcard .gtop .gname { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 21px; margin-top: 4px; }
+  .gcard .gtop .gband { font-size: 13px; margin-top: 2px; opacity: 0.95; }
+  .gcard.wa .gtop { background: var(--wa); }
+  .gcard.tg .gtop { background: var(--tg); }
+  .gcard.vip .gtop { background: linear-gradient(120deg, var(--burgundy), var(--red)); }
+  .gcard .gbody { padding: 16px 20px 20px; }
+  .gcard .gbody .gl { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .gcard .gbody ul { list-style: none; }
+  .gcard .gbody li { font-size: 13.5px; color: var(--ink-soft); padding: 4px 0 4px 18px; position: relative; }
+  .gcard .gbody li::before { content: ""; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 2px; background: var(--accent, var(--red)); }
+  .gcard.wa { --accent: var(--wa); }
+  .gcard.tg { --accent: var(--tg); }
+  .gcard.vip { --accent: var(--red); }
+
+  /* ===== LP mock ===== */
+  .lpwrap { display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: start; }
+  .lpnote { position: sticky; top: 20px; }
+  .lpnote h4 { font-family: var(--hero); font-weight: 700; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: -0.2px; }
+  .lpnote ol { list-style: none; counter-reset: s; }
+  .lpnote li { counter-increment: s; font-size: 13.5px; color: var(--ink-soft); padding: 9px 0 9px 34px; position: relative; border-bottom: 1px solid var(--line); }
+  .lpnote li::before { content: counter(s); position: absolute; left: 0; top: 8px; width: 22px; height: 22px; border-radius: 6px; background: var(--red); color: #fff; font-weight: 700; font-size: 12px; display: grid; place-items: center; }
+  .lpnote li strong { color: var(--ink); font-weight: 600; }
+
+  .phone { position: relative; background: #0a0a0c; border-radius: 44px; padding: 10px; box-shadow: 0 36px 70px -34px rgba(0,0,0,0.65), inset 0 0 0 2px #2a2a30, inset 0 0 0 5px #0a0a0c; width: 300px; margin: 0 auto; }
+  .phone::before { content: ""; position: absolute; top: 92px; left: -2.5px; width: 2.5px; height: 28px; background: #1a1a1e; border-radius: 3px 0 0 3px; }
+  .phone::after { content: ""; position: absolute; top: 138px; left: -2.5px; width: 2.5px; height: 48px; background: #1a1a1e; border-radius: 3px 0 0 3px; box-shadow: 0 64px 0 #1a1a1e; }
+  .phone .pwr { position: absolute; top: 124px; right: -2.5px; width: 2.5px; height: 66px; background: #1a1a1e; border-radius: 0 3px 3px 0; }
+  .phone .screen { position: relative; background: #fff; border-radius: 34px; overflow: hidden; }
+  .phone .island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 80px; height: 24px; background: #0a0a0c; border-radius: 100px; z-index: 20; }
+  .phone .island::after { content: ""; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 50%; background: #1c1c22; box-shadow: inset 0 0 0 1.5px #2c2c34; }
+  .phone .statusbar { position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 15px 9px 0 22px; font-family: var(--body); }
+  .phone .statusbar .ic { display: flex; align-items: center; gap: 5px; color: #fff; }
+  .phone .statusbar .t { font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.3px; }
+  .phone .statusbar .ic svg { display: block; }
+  .lp-hero { background: linear-gradient(155deg, var(--red), #d10003); color: #fff; padding: 0 20px 30px; position: relative; }
+  .lp-hero .lp-logo-img, .lp-hero .lp-logo { margin-top: 18px; }
+  .lp-hero .lp-logo-img { height: 15px; width: auto; display: block; filter: brightness(0) invert(1); }
+  .lp-hero .lp-logo { font-family: var(--hero); font-weight: 800; font-size: 15px; letter-spacing: -0.5px; align-items: center; }
+  .lp-hero .lp-logo .dot { color: var(--yellow); }
+  .lp-hero .lp-tag { display: inline-block; background: rgba(0,0,0,0.22); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 11px; border-radius: 100px; margin: 16px 0 12px; }
+  .lp-hero h3 { font-family: var(--hero); font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 26px; line-height: 1; letter-spacing: -1px; margin-top: 14px; }
+  .lp-hero p { font-size: 12px; opacity: 0.92; margin-top: 8px; line-height: 1.45; max-width: 90%; }
+  .lp-jon { position: absolute; top: 48px; right: 20px; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.45); background: rgba(255,255,255,0.12); display: grid; place-items: center; font-size: 8.5px; font-weight: 700; text-align: center; line-height: 1.05; letter-spacing: 0.3px; }
+  .lp-body { padding: 20px 18px 16px; }
+  .lp-intro { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 11px; }
+  .lp-q { margin-bottom: 9px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 11px; background: var(--bg-2); }
+  .lp-q .qn { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 9px; display: flex; align-items: center; gap: 8px; line-height: 1.22; letter-spacing: -0.2px; }
+  .lp-q .qn .qi { flex: none; width: 24px; height: 24px; border-radius: 7px; background: var(--red); color: #fff; font-size: 12px; font-weight: 800; display: grid; place-items: center; font-style: italic; font-family: var(--hero); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 11.5px; font-weight: 600; color: var(--ink-soft); border: 1.5px solid var(--line-2); border-radius: 9px; padding: 7px 11px; cursor: default; transition: all .15s; background: #fff; }
+  .chip.sel { background: var(--red); border-color: var(--red); color: #fff; }
+  .chip.sel-y { background: var(--yellow); border-color: var(--yellow); color: #7a5c00; }
+  .lp-cta { width: 100%; background: var(--red); color: #fff; border: none; font-family: var(--hero); font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 14px; letter-spacing: 0.3px; padding: 13px; border-radius: 11px; margin-top: 8px; cursor: pointer; box-shadow: 0 12px 24px -12px var(--red); }
+  .lp-foot { text-align: center; font-size: 9px; color: var(--ink-faint); padding: 10px 18px 16px; line-height: 1.45; }
+  .lp-prog { height: 3px; background: var(--line); border-radius: 100px; overflow: hidden; margin: 0 0 13px; }
+  .lp-prog span { display: block; height: 100%; width: 80%; background: var(--red); }
+
+  footer { margin-top: 60px; border-top: 1px solid var(--line); padding-top: 26px; display: flex; align-items: center; justify-content: center; }
+  footer .logo-img-sm { height: 22px; width: auto; display: block; }
+  footer .logo-fallback-sm { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 17px; letter-spacing: -0.5px; color: var(--ink-soft); display: none; align-items: center; }
+  footer .logo-fallback-sm .dot { color: var(--red); }
+
   .a-red { --accent: var(--red); --accent-ink: var(--red); --accent-soft: rgba(253,1,4,0.12); }
   .a-yellow { --accent: #e0b000; --accent-ink: #9a7600; --accent-soft: rgba(255,226,0,0.30); }
   .a-burg { --accent: var(--burgundy); --accent-ink: var(--burgundy); --accent-soft: rgba(84,0,49,0.10); }
-  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } .vip-split { grid-template-columns: 1fr; } .topbar .meta { display: none; } }
+  .a-purple { --accent: var(--purple); --accent-ink: var(--purple); --accent-soft: rgba(24,16,32,0.10); }
+
+  @media (max-width: 860px) { .groups { grid-template-columns: 1fr; } .lpwrap { grid-template-columns: 1fr; } .lpnote { position: static; } }
+  @media (max-width: 760px) { .topbar .meta { display: none; } }
 </style>
 </head>
 <body>
@@ -137,72 +188,135 @@
       <img class="logo-img" src="https://i.ibb.co/YBhrn1zz/Superbet-Logo-svg.png" alt="Superbet" onerror="this.style.display='none';document.getElementById('lf').style.display='flex';">
       <span class="logo-fallback" id="lf">superbet<span class="dot">.</span></span>
     </div>
-    <div class="meta">Funil de conversão x1<br>Base do Jon Vlogs · uso interno</div>
+    <div class="meta">Funil Jon Vlogs &times; Superbet<br>Tr&aacute;fego &rarr; LP &rarr; grupos &middot; uso interno</div>
   </div>
+
   <section class="hero">
     <span class="eyebrow">Projeto de ativação</span>
-    <h1>Funil de conversão x1</h1>
-    <p class="lede">Uma base do Jon Vlogs que já teve contato com apostas mas não responde às ativações. O plano: reabrir a conversa pelo x1, qualificar com o mínimo de atrito e levar para o grupo certo.</p>
+    <h1>Funil de conversão</h1>
+    <p class="lede">Da campanha de tráfego à entrada nos grupos segmentados por faixa de aposta. O percurso completo do lead, com os roteiros, a landing page de conversão e o plano de nutrição de cada grupo.</p>
   </section>
-  <div class="stats">
-    <div class="stat"><div class="n red">x1</div><div class="l">Contato direto, um a um, pelo Jon Vlogs</div></div>
-    <div class="stat"><div class="n">4+1</div><div class="l">Perguntas em ordem de atrito crescente</div></div>
-    <div class="stat"><div class="n">2</div><div class="l">Caminhos: aquisição e reativação</div></div>
-    <div class="stat"><div class="n">&#8734;</div><div class="l">Dinâmicas diárias mantêm a base ativa</div></div>
+
+  <nav class="secnav">
+    <a href="#fluxo">1 · O fluxo completo</a>
+    <a href="#lp">2 · A landing page</a>
+    <a href="#nutricao">3 · Nutrição dos grupos</a>
+  </nav>
+
+  <!-- ===== SEÇÃO 1: FLUXO ===== -->
+  <div class="section-head" id="fluxo"><span class="idx">01</span><h2>O fluxo completo</h2></div>
+  <p class="section-sub">Do anúncio pago ao grupo certo, etapa por etapa.</p>
+  <p class="hint"><b>Clique em cada etapa</b> para abrir o roteiro e os detalhes.</p>
+  <div class="flow" id="flowMount"></div>
+
+  <!-- ===== SEÇÃO 2: LP ===== -->
+  <div class="section-head" id="lp"><span class="idx">02</span><h2>A landing page de conversão</h2></div>
+  <p class="section-sub">Esboço visual (amostra das perguntas). As antigas perguntas viram campos de validação; ao preencher, o botão leva ao grupo.</p>
+  <div class="lpwrap">
+    <div class="lpnote">
+      <h4>Como a LP funciona</h4>
+      <ol>
+        <li>Lead chega pelo link do vídeo, já aquecido pelo Jon</li>
+        <li><strong>Hero</strong> com o gancho e a marca Superbet</li>
+        <li>Responde os <strong>campos de validação</strong> (as antigas perguntas)</li>
+        <li>A faixa de aposta define o grupo de destino</li>
+        <li>Botão <strong>"Quero entrar no grupo agora"</strong></li>
+        <li>Automação distribui o lead no grupo certo</li>
+      </ol>
+    </div>
+    <div class="phone">
+      <span class="pwr"></span>
+      <div class="screen">
+        <div class="island"></div>
+        <div class="lp-hero">
+          <div class="statusbar">
+            <span class="t">9:41</span>
+            <span class="ic">
+              <svg width="16" height="11" viewBox="0 0 18 12" fill="none"><rect x="0" y="8" width="3" height="4" rx="1" fill="white"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="white"/><rect x="10" y="3" width="3" height="9" rx="1" fill="white"/><rect x="15" y="0" width="3" height="12" rx="1" fill="white"/></svg>
+              <svg width="15" height="11" viewBox="0 0 16 12" fill="none"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l-1.3 1.4A6.6 6.6 0 0 0 8 4.3c-1.8 0-3.5.7-4.7 1.9L2 4.8A8.6 8.6 0 0 1 8 2.4Z" fill="white"/><path d="M8 6.1c1.3 0 2.5.5 3.4 1.4l-1.4 1.4A2.9 2.9 0 0 0 8 8c-.8 0-1.5.3-2 .9L4.6 7.5A4.9 4.9 0 0 1 8 6.1Z" fill="white"/><circle cx="8" cy="10.4" r="1.4" fill="white"/></svg>
+              <svg width="24" height="12" viewBox="0 0 26 13" fill="none"><rect x="1" y="1.5" width="21" height="10" rx="3" stroke="white" stroke-opacity="0.45" stroke-width="1"/><rect x="2.8" y="3.3" width="16" height="6.4" rx="1.6" fill="white"/><rect x="23.2" y="4.6" width="1.8" height="3.8" rx="0.9" fill="white" fill-opacity="0.55"/></svg>
+            </span>
+          </div>
+          <img class="lp-logo-img" src="https://i.ibb.co/YBhrn1zz/Superbet-Logo-svg.png" alt="Superbet" onerror="this.style.display='none';document.getElementById('lplf').style.display='inline-flex';">
+          <span class="lp-logo" id="lplf" style="display:none;">superbet<span class="dot">.</span></span>
+          <div class="lp-jon">JON<br>VLOGS</div>
+          <h3>SuperJon</h3>
+          <p>Responde as perguntas abaixo e a equipe te direciona pro grupo certo.</p>
+        </div>
+        <div class="lp-body">
+          <div class="lp-prog"><span></span></div>
+          <div class="lp-intro">Perguntas rápidas</div>
+          <div class="lp-q">
+            <div class="qn"><span class="qi">1</span> Você curte mais cassino ou esporte?</div>
+            <div class="chips"><span class="chip">Cassino</span><span class="chip">Esporte</span><span class="chip sel-y">Os dois</span></div>
+          </div>
+          <div class="lp-q">
+            <div class="qn"><span class="qi">2</span> Quanto costuma apostar por mês?</div>
+            <div class="chips"><span class="chip sel">Até R$ 1.000</span><span class="chip">R$ 1.000 a 5.000</span><span class="chip">+ de R$ 5.000</span></div>
+          </div>
+          <button class="lp-cta">Quero entrar no grupo agora</button>
+        </div>
+        <div class="lp-foot">Conteúdo para maiores de 18 anos. Jogue com responsabilidade.</div>
+      </div>
+    </div>
   </div>
-  <div class="section-head"><span class="idx">&rarr;</span><h2>O fluxo, etapa por etapa</h2></div>
-  <p class="hint"><b>Clique em cada etapa</b> para abrir o roteiro e a copy pronta para usar no x1.</p>
-  <div class="flow" id="flow"></div>
+
+  <!-- ===== SEÇÃO 3: NUTRIÇÃO ===== -->
+  <div class="section-head" id="nutricao"><span class="idx">03</span><h2>Nutrição do grupo</h2></div>
+  <p class="section-sub">Um grupo único pra toda a base ativa, e o VIP do VIP como atendimento x1 pra faixa alta.</p>
+  <div class="groups" id="groupsMount"></div>
+
   <footer>
     <span class="fb"><img class="logo-img-sm" src="https://i.ibb.co/YBhrn1zz/Superbet-Logo-svg.png" alt="Superbet" onerror="this.style.display='none';document.getElementById('lf2').style.display='inline-flex';"><span class="logo-fallback-sm" id="lf2">superbet<span class="dot">.</span></span></span>
   </footer>
 </div>
+
 <script>
 const N = {
-  video: { accent:"a-red", badge:"1", step:"Etapa 1 \u00b7 Abertura", title:"V\u00eddeo do Jon Vlogs", sub:"Gancho, exclusividade e comunidade", dl:"Roteiro do v\u00eddeo \u00b7 15 a 25 segundos", script:"Se voc\u00ea t\u00e1 recebendo esse v\u00eddeo \u00e9 porque voc\u00ea \u00e9 de casa, me acompanha faz tempo e curte uma cassinagem. T\u00f4 montando o maior projeto que j\u00e1 fiz, junto com a Superbet, a maior casa do Brasil. V\u00e3o ser grupos fechados, com giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra galera que t\u00e1 dentro. Mas n\u00e3o \u00e9 pra todo mundo n\u00e3o. Pra minha equipe saber em qual grupo te colocar, responde rapidinho as perguntas aqui embaixo.", op:false, bullets:["Reconhecimento: <strong>\"voc\u00ea \u00e9 de casa\"</strong> baixa a guarda logo de cara","Ancoragem: maior projeto, maior casa do Brasil","Comunidade: grupos com din\u00e2micas todos os dias","Exclusividade: <strong>\"n\u00e3o \u00e9 pra todo mundo\"</strong> faz a pessoa querer provar que merece","Sem prometer pr\u00eamio por cadastro ou dep\u00f3sito"] },
-  q1: { accent:"a-red", badge:"2", step:"Etapa 2 \u00b7 Qualifica\u00e7\u00e3o", title:"Voc\u00ea j\u00e1 aposta?", sub:"Primeiro sim, atrito m\u00ednimo", dl:"Mensagem do x1", script:"Pra come\u00e7ar: voc\u00ea j\u00e1 aposta hoje?", op:false, opts:["sim","n\u00e3o"], bullets:["Pergunta mais f\u00e1cil de responder, de prop\u00f3sito","<strong>Sim</strong>: segue o fluxo normalmente","<strong>N\u00e3o</strong>: marca como lead frio, foco em boas-vindas e educa\u00e7\u00e3o"] },
-  q2: { accent:"a-red", badge:"3", step:"Etapa 3 \u00b7 Segmenta\u00e7\u00e3o", title:"Cassino, esporte ou os dois?", sub:"Inclui quem joga nos dois segmentos", dl:"Mensagem do x1", script:"Voc\u00ea curte mais cassino, esporte, ou manda nos dois?", op:false, opts:["cassino","esporte","os dois"], optHot:"os dois", bullets:["Tr\u00eas op\u00e7\u00f5es, nunca bin\u00e1rio","<strong>\"Os dois\"</strong> \u00e9 o lead mais valioso: maior leque e frequ\u00eancia","Define o grupo, e j\u00e1 sinaliza perfil premium"] },
-  q3: { accent:"a-red", badge:"4", step:"Etapa 4 \u00b7 Decis\u00e3o", title:"J\u00e1 tem conta na Superbet?", sub:"Aqui a base se divide em dois caminhos", dl:"Mensagem do x1", script:"\u00daltima coisa antes de te encaixar: voc\u00ea j\u00e1 tem conta na Superbet?", op:false, opts:["sim","n\u00e3o"], bullets:["<strong>N\u00e3o tem</strong>: caminho de aquisi\u00e7\u00e3o e primeiro dep\u00f3sito","<strong>J\u00e1 tem</strong>: caminho de reativa\u00e7\u00e3o, v\u00ednculo de link e segmenta\u00e7\u00e3o por valor"] },
-  acq1: { accent:"a-red", badge:"A1", step:"Caminho A \u00b7 CTA", title:"Criar conta no link", sub:"Link de afiliado do Jon Vlogs", dl:"Mensagem do x1", script:"Show! Olha, como as din\u00e2micas e promo\u00e7\u00f5es todas rolam na Superbet, o ideal \u00e9 voc\u00ea ter conta l\u00e1 pra curtir tudo junto com a galera. Se ainda n\u00e3o tem, cria pelo meu link aqui \u00f3: [LINK]. Quando estiver com a conta, me avisa.", op:false, bullets:["CTA sutil: conta \u00e9 o meio de participar, n\u00e3o uma exig\u00eancia","Sempre o link de afiliado, nunca o site gen\u00e9rico","Sem prometer pr\u00eamio ou ticket pela cria\u00e7\u00e3o"] },
-  acq2: { accent:"a-red", badge:"A2", step:"Caminho A \u00b7 Confirma\u00e7\u00e3o", title:"Conta criada, avisa aqui", sub:"Cria expectativa da abertura", dl:"Mensagem do x1", script:"Assim que sua conta tiver criada, me manda um ok aqui que eu confirmo e j\u00e1 te coloco no grupo certo. T\u00e1 chegando uma mega a\u00e7\u00e3o de abertura dos grupos pra quem t\u00e1 ativo l\u00e1 dentro, ent\u00e3o n\u00e3o perde tempo.", op:false, bullets:["Mant\u00e9m a pessoa engajada at\u00e9 a entrada no grupo","Mega a\u00e7\u00e3o \u00e9 para quem j\u00e1 est\u00e1 ativo, n\u00e3o recompensa por cadastro","Gera expectativa sem prometer pr\u00eamio pela cria\u00e7\u00e3o"] },
-  acq3: { accent:"a-red", badge:"A3", step:"Caminho A \u00b7 Operacional", title:"Valida\u00e7\u00e3o por tracking", sub:"Postback do link \u00b7 print s\u00f3 plano B", dl:"Como validar \u00b7 uso interno", script:"Valida\u00e7\u00e3o autom\u00e1tica via postback ou registro de FTD do link de afiliado. Print de tela apenas se a Superbet n\u00e3o der tracking em tempo h\u00e1bil.", op:true, bullets:["Prefer\u00eancia: confirma\u00e7\u00e3o autom\u00e1tica pelo painel de afiliado","Print n\u00e3o escala em base grande e gera confer\u00eancia manual","Print fica como plano B pontual, nunca regra"] },
-  acq4: { accent:"a-red", badge:"A4", step:"Caminho A \u00b7 Conclus\u00e3o", title:"Confirma e entra no grupo", sub:"Boas-vindas \u00e0 comunidade", dl:"Mensagem do x1", script:"Fechou! Conta confirmada \u2705 Te adicionando no grupo agora. J\u00e1 caiu de cabe\u00e7a na mega a\u00e7\u00e3o de abertura, que \u00e9 s\u00f3 pra quem t\u00e1 ativo aqui dentro, e tem din\u00e2mica e promo\u00e7\u00e3o todo dia. Fica de olho.", op:false, bullets:["Confirma a conta validada","Mega a\u00e7\u00e3o e promo\u00e7\u00f5es s\u00e3o s\u00f3 para quem est\u00e1 ativo no grupo","Encaminha para o grupo certo conforme a etapa 3"] },
-  react1: { accent:"a-burg", badge:"B1", step:"Caminho B \u00b7 Verifica\u00e7\u00e3o", title:"Conta j\u00e1 \u00e9 do link?", sub:"N\u00e3o exclui ningu\u00e9m do grupo", dl:"Mensagem do x1", script:"Boa, j\u00e1 tem conta ent\u00e3o! Sua conta foi criada pelo meu link? Se foi, perfeito. Se n\u00e3o foi, sem problema, voc\u00ea entra no grupo do mesmo jeito.", op:false, bullets:["Identifica se a conta est\u00e1 vinculada ao Jon Vlogs","Conta fora do link <strong>n\u00e3o</strong> exclui a pessoa da a\u00e7\u00e3o","V\u00ednculo \u00e9 desej\u00e1vel, mas n\u00e3o obrigat\u00f3rio"] },
-  react2: { accent:"a-yellow", badge:"B2", step:"Caminho B \u00b7 Qualifica\u00e7\u00e3o", title:"Faixa de valor mensal", sub:"Pergunta sens\u00edvel, deixada por \u00faltimo", dl:"Mensagem do x1", script:"Pra eu te colocar no grupo certo (alguns t\u00eam benef\u00edcio maior): quanto voc\u00ea costuma movimentar por m\u00eas em apostas?", op:false, opts:["100\u2013500","500\u20131.000","1.000\u20135.000","5.000\u201310.000","10.000+"], optHot:"10.000+", bullets:["S\u00f3 perguntada a quem j\u00e1 respondeu tudo antes","Faixas altas: grupo VIP, atendimento pr\u00f3ximo","Faixas menores: grupo geral segmentado"] },
-  vip: { accent:"a-yellow", badge:"\u2605", step:"Tier alto", title:"Grupo VIP", sub:"Alta recorr\u00eancia", dl:"Tratamento do tier", script:"Grupo reduzido, atendimento pr\u00f3ximo, din\u00e2micas e promo\u00e7\u00f5es exclusivas pra quem t\u00e1 ativo, contato direto. Quem respondeu \"os dois\" e faixa alta entra aqui com prioridade.", op:true, bullets:["Promo\u00e7\u00f5es exclusivas, comunicadas dentro do grupo","Din\u00e2micas com benef\u00edcios maiores pra clientes ativos","Comunica\u00e7\u00e3o pessoal, menos massificada"] },
-  general: { accent:"a-burg", badge:"\u2022", step:"Tier geral", title:"Grupo geral", sub:"Segmentado por interesse", dl:"Tratamento do tier", script:"Grupos por interesse declarado: cassino, esporte ou os dois. Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias pra clientes ativos e caminho de subida para o VIP.", op:true, bullets:["Comunica\u00e7\u00e3o em escala, mas segmentada por produto","Mesmas din\u00e2micas di\u00e1rias dentro do grupo","Monitorar quem sobe de faixa para promover ao VIP"] },
-  group: { accent:"a-red", badge:"\u2192", step:"Ponto de encontro", title:"Entrada no grupo + nutri\u00e7\u00e3o", sub:"Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias", dl:"O que acontece dentro do grupo", script:"\u00c9 aqui que os dois caminhos se encontram. O grupo \u00e9 o come\u00e7o da rela\u00e7\u00e3o: giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra quem t\u00e1 ativo, conte\u00fado do Jon e prova social da comunidade.", op:true, bullets:["Ritmo di\u00e1rio de din\u00e2micas mant\u00e9m a base voltando","Promo\u00e7\u00f5es comunicadas s\u00f3 aqui dentro, p/ clientes ativos","Prova social engaja quem j\u00e1 est\u00e1 no grupo"] },
-  loop: { accent:"a-red", badge:"\u221e", step:"Motor de reten\u00e7\u00e3o", title:"Loop de reten\u00e7\u00e3o", sub:"Din\u00e2micas di\u00e1rias mant\u00eam a base ativa", dl:"Como o loop se sustenta", script:"Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias \u2192 engajamento no grupo \u2192 comunidade ativa \u2192 recorr\u00eancia natural. Para o VIP, din\u00e2micas exclusivas e contato pr\u00f3ximo.", op:true, bullets:["Promo\u00e7\u00f5es s\u00e3o s\u00f3 para clientes ativos, nunca isca de cadastro","Sem condicionar pr\u00eamio a dep\u00f3sito, conforme a regula\u00e7\u00e3o","VIP recebe din\u00e2micas pr\u00f3prias e atendimento dedicado"] }
+  trafego: { accent:"a-red", badge:"1", step:"Etapa 1 \u00b7 Topo", title:"Campanha de tr\u00e1fego", sub:"An\u00fancio em v\u00eddeo que abre o funil", dl:"O que roda aqui", script:"Campanha de tr\u00e1fego pago veiculando o v\u00eddeo criativo. Quem assiste e clica \u00e9 levado ao perfil do Jon Vlogs, induzido a abrir os destaques.", op:true, bullets:["P\u00fablico segmentado por interesse em apostas e perfil do Jon","CTA do an\u00fancio: clicar e ir ao perfil do Jon","Foco em curiosidade, sem oferta direta"] },
+  criativo: { accent:"a-red", badge:"2", step:"Etapa 2 \u00b7 Criativo", title:"V\u00eddeo criativo da campanha", sub:"O an\u00fancio em v\u00eddeo que o lead assiste", dl:"Roteiro do criativo", script:"Oh, se liga! Eu nunca gostei muito desses destaques do Instagram, sempre acho que colocam s\u00f3 uns conte\u00fados antigos que ningu\u00e9m quer saber. Mas tive uma ideia e vou fazer diferente. Ent\u00e3o\u2026 voc\u00ea me conhece? Me acompanha? Sabe que comigo \u00e9 s\u00f3 coisa boa, n\u00e9? Ent\u00e3o j\u00e1 cola no meu perfil, vai no \u00fanico destaque que tem l\u00e1 e receba seu doce!", op:false, bullets:["Tom espont\u00e2neo, quebra de padr\u00e3o pra prender a aten\u00e7\u00e3o","O link da campanha leva ao perfil do Jon"] },
+  destaque: { accent:"a-purple", badge:"3", step:"Etapa 3 \u00b7 Perfil", title:"Perfil \u2192 destaque do Instagram", sub:"O lead \u00e9 induzido a abrir o destaque", dl:"Fun\u00e7\u00e3o da etapa", script:"Vindo do an\u00fancio, o lead chega ao perfil do Jon e \u00e9 induzido a clicar no \u00fanico destaque. \u00c9 nele que mora o v\u00eddeo do projeto (pr\u00f3xima etapa). Quem j\u00e1 segue tamb\u00e9m cai aqui de forma org\u00e2nica.", op:true, bullets:["Um \u00fanico destaque concentra toda a aten\u00e7\u00e3o","Captura tr\u00e1fego pago e org\u00e2nico no mesmo ponto","Ponte entre o an\u00fancio e o v\u00eddeo de convite"] },
+  video: { accent:"a-red", badge:"4", step:"Etapa 4 \u00b7 V\u00eddeo", title:"V\u00eddeo do Jon Vlogs", sub:"O convite pro projeto", dl:"Roteiro do v\u00eddeo (atualizado)", script:"Se voc\u00ea chegou at\u00e9 aqui, \u00e9 porque voc\u00ea \u00e9 de casa, me acompanha faz tempo e curte uma cassinagem. T\u00f4 montando o maior projeto que j\u00e1 fiz, junto com a Superbet, a maior casa do Brasil. V\u00e3o ser grupos fechados, com giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra galera. Mas n\u00e3o \u00e9 pra todo mundo n\u00e3o! Pra minha equipe saber em qual grupo te colocar, responde voando as perguntas que est\u00e3o nesse link:", op:false, bullets:["Abertura nova: \"se voc\u00ea chegou at\u00e9 aqui\"","Comunidade com din\u00e2micas di\u00e1rias","Fecha apontando pro link da LP","Exclusividade: \"n\u00e3o \u00e9 pra todo mundo\""] },
+  lp: { accent:"a-red", badge:"5", step:"Etapa 5 \u00b7 Convers\u00e3o", title:"Landing page de convers\u00e3o", sub:"As perguntas viram campos de valida\u00e7\u00e3o", dl:"O que acontece na LP", script:"O link leva a uma LP de convers\u00e3o em vez de automa\u00e7\u00e3o de perguntas. O lead responde os t\u00f3picos de valida\u00e7\u00e3o e finaliza no bot\u00e3o \"Quero entrar no grupo agora\". Esbo\u00e7o completo na se\u00e7\u00e3o 2.", op:true, bullets:["J\u00e1 aposta? \u00b7 Cassino, esporte ou os dois?","Faixa de aposta mensal (define o grupo)","J\u00e1 tem conta na Superbet?","CTA: Quero entrar no grupo agora"] },
+  automacao: { accent:"a-burg", badge:"6", step:"Etapa 6 \u00b7 Roteamento", title:"Automa\u00e7\u00e3o de entrada", sub:"Leva o lead pro grupo e marca a faixa", dl:"L\u00f3gica de roteamento", script:"Ap\u00f3s o preenchimento, a automa\u00e7\u00e3o adiciona o lead no grupo \u00fanico. A faixa de aposta declarada na LP fica registrada: quem est\u00e1 na faixa alta \u00e9 sinalizado para subir ao VIP do VIP (x1).", op:true, opts:["Todos \u2192 grupo \u00fanico","Faixa alta \u2192 marcado pro x1 VIP"], bullets:["Entrada autom\u00e1tica logo ap\u00f3s a LP","Faixa de aposta registrada para qualifica\u00e7\u00e3o","Faixa alta entra na fila do atendimento x1"] }
 };
+
+const G = [
+  { cls:"wa", plat:"WhatsApp", icon:"\ud83d\udfe2", name:"Grupo \u00fanico", band:"Toda a base ativa entra aqui", nut:["Din\u00e2micas e promo\u00e7\u00f5es di\u00e1rias pra clientes ativos","Conte\u00fado do Jon e provas sociais da comunidade","Caminho de subida: quem evolui ganha o x1 dos VIPs"] },
+  { cls:"vip", plat:"WhatsApp", icon:"\u2b50", name:"VIP do VIP", band:"Atendimento pessoal e exclusivo", nut:["Interação x1, dedicada e próxima","Dinâmicas e vídeos exclusivos do Jon","Avisos antecipados de ações e conteúdos","Relação de longo prazo, foco em recorrência"] }
+];
+
 function detail(n) {
   let opts = "";
-  if (n.opts) { opts = '<div class="opts">' + n.opts.map(o => '<span class="opt' + (n.optHot===o?' hot':'') + '">' + o + '</span>').join("") + '</div>'; }
-  const bullets = n.bullets ? '<ul>' + n.bullets.map(b=>'<li>' + b + '</li>').join("") + '</ul>' : "";
-  return '<div class="detail-inner"><div class="dl">' + n.dl + '</div><div class="script' + (n.op?' op':'') + '">' + n.script + '</div>' + opts + bullets + '</div>';
+  if (n.opts) opts = '<div class="opts">' + n.opts.map(o => '<span class="opt">' + o + '</span>').join("") + '</div>';
+  const bl = n.bullets ? '<ul>' + n.bullets.map(b=>'<li>'+b+'</li>').join("") + '</ul>' : "";
+  return '<div class="detail-inner"><div class="dl">'+n.dl+'</div><div class="script'+(n.op?' op':'')+'">'+n.script+'</div>'+opts+bl+'</div>';
 }
-function node(key, n, compact) {
-  const chev = compact ? "" : '<div class="chev">\u25be</div>';
-  return '<div class="node ' + n.accent + '" data-key="' + key + '"><div class="head"><div class="badge">' + n.badge + '</div><div class="ht"><div class="step">' + n.step + '</div><h3>' + n.title + '</h3><div class="sub">' + n.sub + '</div></div>' + chev + '</div><div class="detail" data-detail="' + key + '">' + detail(n) + '</div></div>';
-}
-const stage = (key,n,compact) => '<div class="stage">' + node(key,n,compact) + '</div>';
-const conn = (cls="") => '<div class="connector ' + cls + '"></div>';
-document.getElementById('flow').innerHTML =
-  stage('video',N.video) + conn() + stage('q1',N.q1) + conn() + stage('q2',N.q2) + conn() + stage('q3',N.q3) +
-  '<div class="divider">a base se divide</div>' +
-  '<div class="cols"><div class="col"><div class="col-head acq"><span class="pill">A</span><div><div class="ch3">N\u00e3o tem conta</div><div class="cs">Aquisi\u00e7\u00e3o \u00b7 primeiro dep\u00f3sito</div></div></div>' +
-  stage('acq1',N.acq1) + conn('dot') + stage('acq2',N.acq2) + conn('dot') + stage('acq3',N.acq3) + conn('dot') + stage('acq4',N.acq4) + '</div>' +
-  '<div class="col"><div class="col-head react"><span class="pill">B</span><div><div class="ch3">J\u00e1 tem conta</div><div class="cs">Reativa\u00e7\u00e3o \u00b7 segmenta\u00e7\u00e3o</div></div></div>' +
-  stage('react1',N.react1) + conn('dot') + stage('react2',N.react2) + conn('dot') +
-  '<div class="vip-split">' + node('vip',N.vip,true) + node('general',N.general,true) + '</div></div></div>' +
-  '<div class="divider">os dois caminhos se encontram</div>' +
-  stage('group',N.group) + conn() + stage('loop',N.loop);
-document.getElementById('flow').addEventListener('click', (e) => {
-  const card = e.target.closest('.node');
-  if (!card) return;
-  const key = card.dataset.key;
-  const det = document.querySelector('[data-detail="' + key + '"]');
+function node(key,n){ return '<div class="node '+n.accent+'" data-key="'+key+'"><div class="head"><div class="badge">'+n.badge+'</div><div class="ht"><div class="step">'+n.step+'</div><h3>'+n.title+'</h3><div class="sub">'+n.sub+'</div></div><div class="chev">\u25be</div></div><div class="detail" data-detail="'+key+'">'+detail(n)+'</div></div>'; }
+const stage=(k,n)=>'<div class="stage">'+node(k,n)+'</div>';
+const conn=(c="")=>'<div class="connector '+c+'"></div>';
+
+document.getElementById('flowMount').innerHTML =
+  stage('trafego',N.trafego)+conn()+stage('criativo',N.criativo)+conn()+stage('destaque',N.destaque)+conn()+
+  stage('video',N.video)+conn()+stage('lp',N.lp)+conn()+stage('automacao',N.automacao)+
+  '<div class="divider">todos entram no grupo</div>';
+
+document.getElementById('groupsMount').innerHTML = G.map(g =>
+  '<div class="gcard '+g.cls+'">'+(g.cls==='vip'?'<div class="upgrade">\u2191 Topo da base</div>':'')+'<div class="gtop"><div class="plat">'+g.icon+' '+g.plat+'</div><div class="gname">'+g.name+'</div><div class="gband">'+g.band+'</div></div><div class="gbody"><div class="gl">Plano de nutri\u00e7\u00e3o</div><ul>'+g.nut.map(x=>'<li>'+x+'</li>').join("")+'</ul></div></div>'
+).join("");
+
+document.getElementById('flowMount').addEventListener('click', e => {
+  // se o usuário está selecionando texto, não recolhe
+  const sel = window.getSelection();
+  if (sel && sel.toString().length > 0) return;
+  // só o cabeçalho do card abre/fecha; cliques no conteúdo aberto são ignorados
+  const head = e.target.closest('.head');
+  if (!head) return;
+  const card = head.closest('.node'); if(!card) return;
+  const k = card.dataset.key;
+  const det = document.querySelector('[data-detail="'+k+'"]');
   const open = card.classList.toggle('open');
-  det.style.maxHeight = open ? det.scrollHeight + 'px' : null;
+  det.style.maxHeight = open ? det.scrollHeight+'px' : null;
 });
 </script>
 </body>
