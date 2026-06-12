@@ -90,6 +90,15 @@
   .script::before { content: "\201C"; position: absolute; left: 17px; top: 20px; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700; font-size: 40px; line-height: 0; color: var(--accent, var(--red)); opacity: 0.32; }
   .script.op { padding: 16px 20px; color: var(--ink-soft); font-size: 14.5px; }
   .script.op::before { content: none; }
+  .cv-intro { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.55; }
+  .creative { margin-bottom: 4px; }
+  .cv-label { font-family: var(--hero); font-weight: 800; font-style: italic; font-size: 15px; color: var(--red); text-transform: uppercase; letter-spacing: -0.2px; margin: 6px 0 12px; }
+  .cv-part { margin-bottom: 12px; }
+  .cv-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; margin-bottom: 8px; }
+  .cv-tag.hook { background: rgba(253,1,4,0.12); color: var(--red); }
+  .cv-tag.body { background: rgba(24,16,32,0.08); color: var(--ink-soft); }
+  .cv-note { font-size: 12.5px; color: var(--ink-faint); font-style: italic; margin-bottom: 8px; padding-left: 2px; }
+  .cv-sep { height: 1px; background: var(--line); margin: 18px 0; }
   .detail-inner ul { list-style: none; margin: 14px 0 0; }
   .detail-inner li { color: var(--ink-soft); font-size: 14.5px; padding: 6px 0 6px 24px; position: relative; }
   .detail-inner li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent, var(--red)); }
@@ -273,12 +282,13 @@
 
 <script>
 const N = {
-  trafego: { accent:"a-red", badge:"1", step:"Etapa 1 \u00b7 Topo", title:"Campanha de tr\u00e1fego", sub:"An\u00fancio em v\u00eddeo que abre o funil", dl:"O que roda aqui", script:"Campanha de tr\u00e1fego pago veiculando o v\u00eddeo criativo. Quem assiste e clica \u00e9 levado ao perfil do Jon Vlogs, induzido a abrir os destaques.", op:true, bullets:["P\u00fablico segmentado por interesse em apostas e perfil do Jon","CTA do an\u00fancio: clicar e ir ao perfil do Jon","Foco em curiosidade, sem oferta direta"] },
-  criativo: { accent:"a-red", badge:"2", step:"Etapa 2 \u00b7 Criativo", title:"V\u00eddeo criativo da campanha", sub:"O an\u00fancio em v\u00eddeo que o lead assiste", dl:"Roteiro do criativo", script:"Oh, se liga! Eu nunca gostei muito desses destaques do Instagram, sempre acho que colocam s\u00f3 uns conte\u00fados antigos que ningu\u00e9m quer saber. Mas tive uma ideia e vou fazer diferente. Ent\u00e3o\u2026 voc\u00ea me conhece? Me acompanha? Sabe que comigo \u00e9 s\u00f3 coisa boa, n\u00e9? Ent\u00e3o j\u00e1 cola no meu perfil, vai no \u00fanico destaque que tem l\u00e1 e receba seu doce!", op:false, bullets:["Tom espont\u00e2neo, quebra de padr\u00e3o pra prender a aten\u00e7\u00e3o","O link da campanha leva ao perfil do Jon"] },
-  destaque: { accent:"a-purple", badge:"3", step:"Etapa 3 \u00b7 Perfil", title:"Perfil \u2192 destaque do Instagram", sub:"O lead \u00e9 induzido a abrir o destaque", dl:"Fun\u00e7\u00e3o da etapa", script:"Vindo do an\u00fancio, o lead chega ao perfil do Jon e \u00e9 induzido a clicar no \u00fanico destaque. \u00c9 nele que mora o v\u00eddeo do projeto (pr\u00f3xima etapa). Quem j\u00e1 segue tamb\u00e9m cai aqui de forma org\u00e2nica.", op:true, bullets:["Um \u00fanico destaque concentra toda a aten\u00e7\u00e3o","Captura tr\u00e1fego pago e org\u00e2nico no mesmo ponto","Ponte entre o an\u00fancio e o v\u00eddeo de convite"] },
-  video: { accent:"a-red", badge:"4", step:"Etapa 4 \u00b7 V\u00eddeo", title:"V\u00eddeo do Jon Vlogs", sub:"O convite pro projeto", dl:"Roteiro do v\u00eddeo (atualizado)", script:"Se voc\u00ea chegou at\u00e9 aqui, \u00e9 porque voc\u00ea \u00e9 de casa, me acompanha faz tempo e curte uma cassinagem. T\u00f4 montando o maior projeto que j\u00e1 fiz, junto com a Superbet, a maior casa do Brasil. V\u00e3o ser grupos fechados, com giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra galera. Mas n\u00e3o \u00e9 pra todo mundo n\u00e3o! Pra minha equipe saber em qual grupo te colocar, responde voando as perguntas que est\u00e3o nesse link:", op:false, bullets:["Abertura nova: \"se voc\u00ea chegou at\u00e9 aqui\"","Comunidade com din\u00e2micas di\u00e1rias","Fecha apontando pro link da LP","Exclusividade: \"n\u00e3o \u00e9 pra todo mundo\""] },
-  lp: { accent:"a-red", badge:"5", step:"Etapa 5 \u00b7 Convers\u00e3o", title:"Landing page de convers\u00e3o", sub:"As perguntas viram campos de valida\u00e7\u00e3o", dl:"O que acontece na LP", script:"O link leva a uma LP de convers\u00e3o em vez de automa\u00e7\u00e3o de perguntas. O lead responde os t\u00f3picos de valida\u00e7\u00e3o e finaliza no bot\u00e3o \"Quero entrar no grupo agora\". Esbo\u00e7o completo na se\u00e7\u00e3o 2.", op:true, bullets:["J\u00e1 aposta? \u00b7 Cassino, esporte ou os dois?","Faixa de aposta mensal (define o grupo)","J\u00e1 tem conta na Superbet?","CTA: Quero entrar no grupo agora"] },
-  automacao: { accent:"a-burg", badge:"6", step:"Etapa 6 \u00b7 Roteamento", title:"Automa\u00e7\u00e3o de entrada", sub:"Leva o lead pro grupo e marca a faixa", dl:"L\u00f3gica de roteamento", script:"Ap\u00f3s o preenchimento, a automa\u00e7\u00e3o adiciona o lead no grupo \u00fanico. A faixa de aposta declarada na LP fica registrada: quem est\u00e1 na faixa alta \u00e9 sinalizado para subir ao VIP do VIP (x1).", op:true, opts:["Todos \u2192 grupo \u00fanico","Faixa alta \u2192 marcado pro x1 VIP"], bullets:["Entrada autom\u00e1tica logo ap\u00f3s a LP","Faixa de aposta registrada para qualifica\u00e7\u00e3o","Faixa alta entra na fila do atendimento x1"] }
+  criativo: { accent:"a-red", badge:"1", step:"Etapa 1 \u00b7 Topo", title:"Campanha de tr\u00e1fego", sub:"An\u00fancio em v\u00eddeo que abre o funil", dl:"Roteiros dos criativos", intro:"Campanha de tr\u00e1fego pago veiculando o v\u00eddeo criativo. Quem assiste e clica vai pro perfil do Jon. Duas vers\u00f5es pra testar qual converte melhor:", creatives:[
+    { label:"Criativo 1", hookNote:"Jon grava o hook de ponta-cabe\u00e7a e gira a c\u00e2mera em seguida para gravar o corpo.", hook:"Eu decidi fazer diferente!", body:"Oh, se liga! Eu nunca gostei muito desses destaques do Instagram, sempre acho que colocam s\u00f3 uns conte\u00fados antigos que ningu\u00e9m quer saber. Mas tive uma ideia e vou fazer diferente. Ent\u00e3o\u2026 voc\u00ea me conhece? Me acompanha? Sabe que comigo \u00e9 s\u00f3 coisa boa, n\u00e9? Ent\u00e3o j\u00e1 cola no meu perfil, vai no \u00fanico destaque que tem l\u00e1 e receba seu doce!" },
+    { label:"Criativo 2", hookNote:"Jon aponta pra cima como se tivesse um print da cara do tigrinho.", hook:"Essa carinha do tigre engana MUITA GENTE, viu?", body:"A maioria das pessoas s\u00f3 cai no achismo na hora de jogar nos slots e no final s\u00f3 perde, e \u00e9 por isso que eu criei um grupo VIP para aumentar as suas chances de fazer aquela forrinha! Vai no meu perfil agora e assiste os meus destaques com o nome GRUPO VIP. Voc\u00ea vai entender o que eu quero dizer quando digo pra n\u00e3o contar s\u00f3 com o seu achismo." }
+  ], bullets:["P\u00fablico segmentado por interesse em apostas e perfil do Jon","Ambos levam ao perfil e ao destaque do Jon"] },
+  destaque: { accent:"a-red", badge:"2", step:"Etapa 2 \u00b7 Destaque", title:"Perfil \u2192 destaque com o v\u00eddeo", sub:"O lead abre o destaque e assiste o convite", dl:"Roteiro do v\u00eddeo do projeto", intro:"Vindo do an\u00fancio, o lead chega ao perfil e \u00e9 induzido a abrir o \u00fanico destaque, onde mora o v\u00eddeo do projeto. Quem j\u00e1 segue tamb\u00e9m cai aqui de forma org\u00e2nica.", script:"Se voc\u00ea chegou at\u00e9 aqui, \u00e9 porque voc\u00ea \u00e9 de casa, me acompanha faz tempo e curte uma cassinagem. T\u00f4 montando o maior projeto que j\u00e1 fiz, junto com a Superbet, a maior casa do Brasil. V\u00e3o ser grupos fechados, com giros, din\u00e2micas e promo\u00e7\u00f5es todos os dias pra galera. Mas n\u00e3o \u00e9 pra todo mundo n\u00e3o! Pra minha equipe saber em qual grupo te colocar, responde voando as perguntas que est\u00e3o nesse link:", bullets:["Um \u00fanico destaque concentra tr\u00e1fego pago e org\u00e2nico","Fecha apontando pro link da LP"] },
+  lp: { accent:"a-red", badge:"3", step:"Etapa 3 \u00b7 Convers\u00e3o", title:"Landing page de convers\u00e3o", sub:"As perguntas viram campos de valida\u00e7\u00e3o", dl:"O que acontece na LP", script:"O link leva a uma LP de convers\u00e3o em vez de automa\u00e7\u00e3o de perguntas. O lead responde os t\u00f3picos de valida\u00e7\u00e3o e finaliza no bot\u00e3o \"Quero entrar no grupo agora\". Esbo\u00e7o completo na se\u00e7\u00e3o 2.", op:true, bullets:["J\u00e1 aposta? \u00b7 Cassino, esporte ou os dois?","Faixa de aposta mensal (define o grupo)","J\u00e1 tem conta na Superbet?","CTA: Quero entrar no grupo agora"] },
+  automacao: { accent:"a-burg", badge:"4", step:"Etapa 4 \u00b7 Roteamento", title:"Automa\u00e7\u00e3o de entrada", sub:"Leva o lead pro grupo e marca a faixa", dl:"L\u00f3gica de roteamento", script:"Ap\u00f3s o preenchimento, a automa\u00e7\u00e3o adiciona o lead no grupo \u00fanico. A faixa de aposta declarada na LP fica registrada: quem est\u00e1 na faixa alta \u00e9 sinalizado para subir ao VIP do VIP (x1).", op:true, opts:["Todos \u2192 grupo \u00fanico","Faixa alta \u2192 marcado pro x1 VIP"], bullets:["Entrada autom\u00e1tica logo ap\u00f3s a LP","Faixa de aposta registrada para qualifica\u00e7\u00e3o","Faixa alta entra na fila do atendimento x1"] }
 };
 
 const G = [
@@ -290,15 +300,28 @@ function detail(n) {
   let opts = "";
   if (n.opts) opts = '<div class="opts">' + n.opts.map(o => '<span class="opt">' + o + '</span>').join("") + '</div>';
   const bl = n.bullets ? '<ul>' + n.bullets.map(b=>'<li>'+b+'</li>').join("") + '</ul>' : "";
-  return '<div class="detail-inner"><div class="dl">'+n.dl+'</div><div class="script'+(n.op?' op':'')+'">'+n.script+'</div>'+opts+bl+'</div>';
+  const intro = n.intro ? '<div class="cv-intro">'+n.intro+'</div>' : "";
+  let body = "";
+  if (n.creatives) {
+    body = n.creatives.map(c =>
+      '<div class="creative">'
+      + '<div class="cv-label">'+c.label+'</div>'
+      + '<div class="cv-part"><span class="cv-tag hook">Hook</span>'+(c.hookNote?'<div class="cv-note">'+c.hookNote+'</div>':'')+'<div class="script">'+c.hook+'</div></div>'
+      + '<div class="cv-part"><span class="cv-tag body">Corpo</span><div class="script">'+c.body+'</div></div>'
+      + '</div>'
+    ).join('<div class="cv-sep"></div>');
+  } else {
+    body = '<div class="script'+(n.op?' op':'')+'">'+n.script+'</div>';
+  }
+  return '<div class="detail-inner"><div class="dl">'+n.dl+'</div>'+intro+body+opts+bl+'</div>';
 }
 function node(key,n){ return '<div class="node '+n.accent+'" data-key="'+key+'"><div class="head"><div class="badge">'+n.badge+'</div><div class="ht"><div class="step">'+n.step+'</div><h3>'+n.title+'</h3><div class="sub">'+n.sub+'</div></div><div class="chev">\u25be</div></div><div class="detail" data-detail="'+key+'">'+detail(n)+'</div></div>'; }
 const stage=(k,n)=>'<div class="stage">'+node(k,n)+'</div>';
 const conn=(c="")=>'<div class="connector '+c+'"></div>';
 
 document.getElementById('flowMount').innerHTML =
-  stage('trafego',N.trafego)+conn()+stage('criativo',N.criativo)+conn()+stage('destaque',N.destaque)+conn()+
-  stage('video',N.video)+conn()+stage('lp',N.lp)+conn()+stage('automacao',N.automacao)+
+  stage('criativo',N.criativo)+conn()+stage('destaque',N.destaque)+conn()+
+  stage('lp',N.lp)+conn()+stage('automacao',N.automacao)+
   '<div class="divider">todos entram no grupo</div>';
 
 document.getElementById('groupsMount').innerHTML = G.map(g =>
